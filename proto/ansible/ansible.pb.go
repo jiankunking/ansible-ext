@@ -226,8 +226,10 @@ func (m *PlayBook) GetRegister() *Register {
 }
 
 type Register struct {
-	ListenPort int32             `protobuf:"varint,1,opt,name=listenPort" json:"listenPort,omitempty"`
-	Labels     map[string]string `protobuf:"bytes,2,rep,name=labels" json:"labels,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	ListenPort    int32             `protobuf:"varint,1,opt,name=listenPort" json:"listenPort,omitempty"`
+	DataCenter    string            `protobuf:"bytes,2,opt,name=dataCenter" json:"dataCenter,omitempty"`
+	ConsulAddress string            `protobuf:"bytes,3,opt,name=consulAddress" json:"consulAddress,omitempty"`
+	Labels        map[string]string `protobuf:"bytes,4,rep,name=labels" json:"labels,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 }
 
 func (m *Register) Reset()                    { *m = Register{} }
